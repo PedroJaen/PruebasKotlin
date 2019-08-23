@@ -11,5 +11,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         label.text="hola mundo 2!"
+        button.text="Boton de prueba"
     }
 }
