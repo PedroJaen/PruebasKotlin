@@ -1,5 +1,6 @@
 package com.nagasia.pruebaskotlin.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
@@ -20,7 +21,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         label.text="hola mundo 2!"
-        button.text="Boton de prueba"
+        button1.text="Funciones de extension"
+
+        button1.setOnClickListener{
+            val intent=Intent(this,FExtensionActivity::class.java)
+            startActivity(intent)
+        }
 
         initCarList()
 
