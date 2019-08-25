@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.nagasia.pruebaskotlin.model.CarModel
 import com.nagasia.pruebaskotlin.R
 import com.nagasia.pruebaskotlin.adapter.CarAdapter
+import com.nagasia.pruebaskotlin.adapter.CustomCarAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -24,8 +25,18 @@ class MainActivity : AppCompatActivity() {
         initCarList()
 
         mainList.layoutManager=LinearLayoutManager(this)
-        mainList.adapter=CarAdapter(carList,{
+        /*mainList.adapter=CarAdapter(carList,{
             Toast.makeText(this,it.brand,Toast.LENGTH_SHORT).show()
+        })*/
+        mainList.adapter=CustomCarAdapter(carList,object:CustomCarAdapter.CustomListener{
+            override fun clickOnCarItem(carModel: CarModel) {
+                Toast.makeText(this@MainActivity,"Click "+carModel.id,Toast.LENGTH_SHORT).show()
+            }
+
+            override fun longClickOnCarItem(carModel: CarModel) {
+                Toast.makeText(this@MainActivity,"Long click "+carModel.id,Toast.LENGTH_SHORT).show()
+            }
+
         })
     }
 

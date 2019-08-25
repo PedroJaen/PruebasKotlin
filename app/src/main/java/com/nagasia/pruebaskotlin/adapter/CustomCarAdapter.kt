@@ -24,6 +24,7 @@ class CustomCarAdapter(val items:List<CarModel>,val listener: CustomListener)
         val car = items.get(position)
         holder.brandLabel.text = car.brand
         holder.check.isChecked = car.isSelected
+
         holder.itemView.setOnClickListener {
             holder.check.performClick()
         }
