@@ -1,15 +1,13 @@
 package com.nagasia.pruebaskotlin.Activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.nagasia.pruebaskotlin.R
 import com.nagasia.pruebaskotlin.extension.*
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_fextension.*
 
 class FExtensionActivity : AppCompatActivity() {
@@ -39,9 +37,9 @@ class FExtensionActivity : AppCompatActivity() {
 
         showToast("hola",500)
 
-        button2.text="siguiente"
+        button2.text="Lambdas"
         button2.setOnClickListener{
-            val intent= Intent(this,FExtensionActivity::class.java)
+            val intent= Intent(this,Lambdas::class.java)
             startActivity(intent)
         }
 
